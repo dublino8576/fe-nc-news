@@ -10,7 +10,13 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "bootstrap": "^5.3.3",
+    "bootstrap-container": "^1.0.0",
+    "bootstrap-nav": "^0.0.1",
+    "navbar": "^3.0.0",
+    "navdropdown": "^1.0.0",
     "react": "^19.0.0",
+    "react-bootstrap": "^2.10.9",
     "react-dom": "^19.0.0"
   },
   "devDependencies": {
