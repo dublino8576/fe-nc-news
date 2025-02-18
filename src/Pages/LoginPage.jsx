@@ -1,31 +1,18 @@
-import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
-import { fetchUserInfo } from "../utils/api";
+import { useNavigate } from "react-router-dom";
 
-export const LoginPage = () => {
-  /* const [userInfo, setUserInfo] = useState({});
-  const [isClicked, setIsClicked] = useState(false);
+export const LoginPage = ({ isLoggedIn, setIsLoggedIn }) => {
+  const navigate = useNavigate();
 
-  useEffect(() => {
-    fetchUserInfo().then(({ users }) => {
-      setUserInfo(users[0]);
-    });
-  }, []);
-
-  function handleClick() {
-    setIsClicked(true);
-    setUserInfo(userInfo);
-    console.log(userInfo, "user info");
-  } */
   return (
-    <Link to="/">
-      <button
-        type="button"
-        className="btn btn-outline-dark btn-lg"
-        //onClick={handleClick}
-      >
-        Login!
-      </button>
-    </Link>
+    <button
+      type="button"
+      className="btn btn-outline-dark btn-lg"
+      onClick={() => {
+        navigate(`/`);
+        setIsLoggedIn(true);
+      }}
+    >
+      Login!
+    </button>
   );
 };

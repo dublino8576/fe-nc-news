@@ -1,1 +1,3 @@
-export const MyProfilePage = () => {};
+export const MyProfilePage = () => {
+  return <p>In profile page</p>;
+};

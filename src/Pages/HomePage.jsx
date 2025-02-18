@@ -5,7 +5,9 @@ export const HomePage = () => {
   return (
     <>
       <SearchBar />
-      <ArticleList />
+      <div className="article-list">
+        <ArticleList />
+      </div>
     </>
   );
 };
