@@ -1,17 +1,55 @@
 import { HeartBtn } from "./HeartBtn";
-import { Link } from "react-router-dom";
-export const ArticleCard = ({ article }) => {
+import { Link, useLocation } from "react-router-dom";
+import { VoteBtn } from "./VoteBtn";
+import { dateFormat } from "../utils/dateFormat";
+
+export const ArticleCard = ({ id, article }) => {
+  //use location of the page to change behaviour of single article component
+  const { pathname } = useLocation();
+  //if in location /articles/:article_id no <Link> tag as already in the destination
+  const isArticlePage = pathname.startsWith(`/articles/`);
+  const created_at = article.created_at;
+  const formattedDate = dateFormat(created_at);
+
   return (
     <li className="article-card" key={article.id}>
-      <Link to="/articles/:article_id">
+      {isArticlePage ? (
         <h1 className="article-title">{article.title}</h1>
-      </Link>
-      <Link to="/articles/:article_id">
-        <img src={article.article_img_url} />
-      </Link>
+      ) : (
+        <Link to={`/articles/${id}`}>
+          <h1 className="article-title">{article.title}</h1>
+        </Link>
+      )}
 
-      <HeartBtn />
+      {isArticlePage ? (
+        <img
+          src={article.article_img_url}
+          alt={`article cover for ${article.title}`}
+        />
+      ) : (
+        <Link to={`/articles/${id}`}>
+          <img
+            src={article.article_img_url}
+            alt={`article cover for ${article.title}`}
+          />
+        </Link>
+      )}
+
+      {isArticlePage ? (
+        <>
+          <VoteBtn id={id} article={article} />
+          <HeartBtn />
+        </>
+      ) : (
+        <HeartBtn />
+      )}
       <p className="author">Author: {article.author}</p>
+      {isArticlePage ? (
+        <>
+          <p className="article-body">{article.body}</p>{" "}
+          <p>Date posted: {formattedDate}</p>
+        </>
+      ) : null}
     </li>
   );
 };

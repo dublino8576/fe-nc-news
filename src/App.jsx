@@ -7,21 +7,26 @@ import { TopicsPage } from "./Pages/TopicsPage";
 import { LoginPage } from "./Pages/LoginPage";
 import { MyProfilePage } from "./Pages/MyProfilePage";
 import { LoginProvider } from "./contexts/LoginContext";
+import { useState } from "react";
 
 function App() {
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
   return (
-    <div>
-      <LoginProvider>
-        <NavBar />
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/articles/:article_id" element={<ArticlePage />} />
-          <Route path="/topics" element={<TopicsPage />} />
-          <Route path="/login" element={<LoginPage />} />
-          <Route path="/myProfile" element={<MyProfilePage />} />
-        </Routes>
-      </LoginProvider>
-    </div>
+    <LoginProvider>
+      <NavBar isLoggedIn={isLoggedIn} />
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/articles/:article_id" element={<ArticlePage />} />
+        <Route path="/topics" element={<TopicsPage />} />
+        <Route
+          path="/login"
+          element={
+            <LoginPage isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />
+          }
+        />
+        <Route path="/myProfile" element={<MyProfilePage />} />
+      </Routes>
+    </LoginProvider>
   );
 }
 

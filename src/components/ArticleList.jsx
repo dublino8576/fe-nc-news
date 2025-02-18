@@ -1,28 +1,36 @@
-import { useContext, useEffect } from "react";
+import { useEffect, useState } from "react";
 import { fetchArticles } from "../utils/api";
-import { AllArticlesContext } from "../contexts/AllArticlesContext";
 import { ArticleCard } from "./ArticleCard";
-
+import { LoadingSpinner } from "./LoadingSpinner";
 export const ArticleList = () => {
-  const { allArticles, setAllArticles } = useContext(AllArticlesContext);
+  const [allArticles, setAllArticles] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     fetchArticles().then(({ articles }) => {
-      console.log(articles);
+      setIsLoading(false);
       setAllArticles(articles);
     });
   }, []);
   return (
-    <ol className="article-list">
-      {allArticles.map((article) => {
-        return (
-          <ArticleCard
-            key={article.article_id}
-            id={article.article_id}
-            article={article}
-          />
-        );
-      })}
-    </ol>
+    <>
+      {isLoading ? (
+        <>
+          <LoadingSpinner /> <p>Loading...</p>
+        </>
+      ) : (
+        <ol className="article-list">
+          {allArticles.map((article) => {
+            return (
+              <ArticleCard
+                key={article.article_id}
+                id={article.article_id}
+                article={article}
+              />
+            );
+          })}
+        </ol>
+      )}
+    </>
   );
 };
