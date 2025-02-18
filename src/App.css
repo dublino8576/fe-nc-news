@@ -13,3 +13,18 @@
   margin: 0 auto; /* <== not sure what you are doing here. Try deleting it as it won't help. */
   padding: 10px 0;
 }
+
+.article-card {
+  padding: 5%;
+  border: blanchedalmond solid 5px;
+}
+
+.article-title {
+  font-size: x-large;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+.author {
+  text-align: left;
+}
