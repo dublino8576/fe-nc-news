@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import { fetchArticleById } from "../utils/api";
 import { ArticleCard } from "../components/ArticleCard";
 import { LoadingSpinner } from "../components/LoadingSpinner";
+import { CommentList } from "../components/CommentList";
 
 export const ArticlePage = ({}) => {
   let { article_id } = useParams();
@@ -25,6 +26,7 @@ export const ArticlePage = ({}) => {
       ) : (
         <ArticleCard article_id={article_id} article={article} />
       )}
+      <CommentList article_id={article_id} />
     </div>
   );
 };

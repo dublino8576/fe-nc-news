@@ -1,6 +1,6 @@
 import { HeartBtn } from "./HeartBtn";
 import { Link, useLocation } from "react-router-dom";
-import { VoteBtn } from "./VoteBtn";
+import { VoteArticleBtn } from "./VoteArticleBtn";
 import { dateFormat } from "../utils/dateFormat";
 
 export const ArticleCard = ({ id, article }) => {
@@ -37,7 +37,7 @@ export const ArticleCard = ({ id, article }) => {
 
       {isArticlePage ? (
         <>
-          <VoteBtn id={id} article={article} />
+          <VoteArticleBtn id={id} article={article} />
           <HeartBtn />
         </>
       ) : (

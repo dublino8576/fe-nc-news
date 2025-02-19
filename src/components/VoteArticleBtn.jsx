@@ -1,6 +1,6 @@
 import { useState } from "react";
 import * as Icon from "react-bootstrap-icons";
-export const VoteBtn = ({ article }) => {
+export const VoteArticleBtn = ({ article }) => {
   const [isThumbsUp, setIsThumbsUp] = useState(article.votes >= 0);
 
   return (
