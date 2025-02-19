@@ -27,3 +27,19 @@ export const fetchCommentsByArticleId = (article_id) => {
     return data;
   });
 };
+
+export const updateArticleVotesUp = (article_id) => {
+  return NcNewsAPI.patch(`/articles/${article_id}`, {
+    inc_votes: 1,
+  }).then(({ data }) => {
+    return data;
+  });
+};
+
+export const updateArticleVotesDown = (article_id) => {
+  return NcNewsAPI.patch(`/articles/${article_id}`, {
+    inc_votes: -1,
+  }).then(({ data }) => {
+    return data;
+  });
+};
