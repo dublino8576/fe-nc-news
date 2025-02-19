@@ -9,13 +9,16 @@ export const ArticlePage = ({}) => {
   let { article_id } = useParams();
   const [article, setArticle] = useState({});
   const [isLoading, setIsLoading] = useState(true);
+  const [likesCount, setLikesCount] = useState(0);
 
   useEffect(() => {
     fetchArticleById(article_id).then(({ article }) => {
       setIsLoading(false);
       setArticle(article);
+      setLikesCount(article.votes);
     });
   }, []);
+
   return (
     <div className="article-page">
       {isLoading ? (
@@ -24,7 +27,12 @@ export const ArticlePage = ({}) => {
           <p>Loading...</p>
         </>
       ) : (
-        <ArticleCard article_id={article_id} article={article} />
+        <ArticleCard
+          article_id={article_id}
+          article={article}
+          likesCount={likesCount}
+          setLikesCount={setLikesCount}
+        />
       )}
       <CommentList article_id={article_id} />
     </div>

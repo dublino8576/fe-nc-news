@@ -3,7 +3,7 @@ import { Link, useLocation } from "react-router-dom";
 import { VoteArticleBtn } from "./VoteArticleBtn";
 import { dateFormat } from "../utils/dateFormat";
 
-export const ArticleCard = ({ id, article }) => {
+export const ArticleCard = ({ id, article, likesCount, setLikesCount }) => {
   //use location of the page to change behaviour of single article component
   const { pathname } = useLocation();
   //if in location /articles/:article_id no <Link> tag as already in the destination
@@ -37,7 +37,12 @@ export const ArticleCard = ({ id, article }) => {
 
       {isArticlePage ? (
         <>
-          <VoteArticleBtn id={id} article={article} />
+          <VoteArticleBtn
+            id={id}
+            article={article}
+            likesCount={likesCount}
+            setLikesCount={setLikesCount}
+          />
           <HeartBtn />
         </>
       ) : (
