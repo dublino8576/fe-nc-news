@@ -42,3 +42,39 @@
   margin-top: 5rem;
   margin-bottom: auto;
 }
+
+.comments {
+  text-align: left;
+  display: inline;
+  margin-right: 50%;
+}
+
+.says {
+  font-weight: lighter;
+}
+
+p.avatar {
+  float: left;
+  width: 100px;
+}
+
+.post {
+  overflow: hidden;
+  text-align: left;
+}
+
+.post-text {
+  overflow: hidden;
+}
+
+.comment-img {
+  border: 1px solid #ddd;
+  border-radius: 60px;
+  padding: 20px;
+  width: 80px;
+}
+
+.date-votes {
+  display: inline;
+  padding-right: 10px;
+}
