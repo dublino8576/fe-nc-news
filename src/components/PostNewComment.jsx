@@ -21,7 +21,7 @@ export const PostNewComment = ({ allComments, setAllComments }) => {
       votes: 0,
       created_at: new Date(),
     };
-    //it won't let me save, have to write this
+
     setAllComments((allComments) => {
       return [postedCommentInState, ...allComments];
     });
