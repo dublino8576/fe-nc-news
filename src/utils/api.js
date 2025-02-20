@@ -52,3 +52,9 @@ export const postCommentByArticleId = (authorName, article_id, newComment) => {
     return data;
   });
 };
+
+export const deleteCommentByCommentId = (comment_id) => {
+  return NcNewsAPI.delete(`comments/${comment_id}`).then(({ data }) => {
+    return data;
+  });
+};
