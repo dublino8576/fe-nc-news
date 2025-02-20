@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const NcNewsAPI = axios.create({
+export const NcNewsAPI = axios.create({
   baseURL: "https://nc-news-with-comments-project.onrender.com/api/",
 });
 
@@ -39,6 +39,15 @@ export const updateArticleVotesUp = (article_id) => {
 export const updateArticleVotesDown = (article_id) => {
   return NcNewsAPI.patch(`/articles/${article_id}`, {
     inc_votes: -1,
+  }).then(({ data }) => {
+    return data;
+  });
+};
+
+export const postCommentByArticleId = (authorName, article_id, newComment) => {
+  return NcNewsAPI.post(`/articles/${article_id}/comments`, {
+    body: newComment,
+    username: authorName,
   }).then(({ data }) => {
     return data;
   });

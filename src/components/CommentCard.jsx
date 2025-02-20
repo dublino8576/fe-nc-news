@@ -3,7 +3,13 @@ import { fetchUserInfo } from "../utils/api";
 import { dateFormat } from "../utils/dateFormat";
 import { VoteCommentBtn } from "./VoteCommentBtn";
 
-export const CommentCard = ({ id, article_id, comment }) => {
+export const CommentCard = ({
+  id,
+  comment,
+  article_id,
+  allComments,
+  setAllComments,
+}) => {
   const [userImg, setUserImg] = useState("");
   useEffect(() => {
     fetchUserInfo().then(({ users }) => {
@@ -13,7 +19,7 @@ export const CommentCard = ({ id, article_id, comment }) => {
         }
       });
     });
-  });
+  }, []);
   const commentDate = comment.created_at;
   const formattedDate = dateFormat(commentDate);
   return (
