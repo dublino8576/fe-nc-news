@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { fetchCommentsByArticleId } from "../utils/api";
 import { CommentCard } from "./CommentCard";
-import { PostNewComment } from "../images/PostNewComment";
+import { PostNewComment } from "./PostNewComment";
 
 export const CommentList = ({ article_id }) => {
   const [allComments, setAllComments] = useState([]);
