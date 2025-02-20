@@ -78,3 +78,33 @@ p.avatar {
   display: inline;
   padding-right: 10px;
 }
+
+textarea {
+  width: 50vw;
+  height: 120px;
+  padding: 12px 40px;
+  box-sizing: border-box;
+  border: 2px solid blanchedalmond;
+  border-radius: 4px;
+  background-color: #f8f8f8;
+  font-size: 16px;
+  color: black;
+}
+
+.comment-list {
+  margin-top: 5%;
+  border: blanchedalmond solid 5px;
+  padding: 5%;
+}
+
+.post-btn {
+  margin-left: 25px;
+}
+
+.label-post {
+  margin-right: 25px;
+}
+
+.success {
+  color: green;
+}
