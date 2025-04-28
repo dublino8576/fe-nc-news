@@ -1,8 +1,19 @@
-# React + Vite
+#NC NEWS
+NC News aka Northcoders News is a news website created during my time at Northcoders BootCamp.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Features include: 
+Logging in with a pre-determined user on the login page;
+Displaying a welcome message on the tab bar when you log in as a user;
+Being able to post new comments on articles with your avatar picture showing;
+Liking articles;
+Posting new articles;
+Viewing your profile with all the articles you posted;
+Deleting articles;
+Viewing all articles in the news database using different queries such as topic, author, posting date, etc.
 
-Currently, two official plugins are available:
+The news website is not mobile friendly, due to limited time on the bootcamp where I prioritized the functionality of the features I implemented. However, I have another project that uses React Native for mobiles. If you are curious, view Habigotchi [https://github.com/dublino8576/habigotchi-front-end](here)!
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+##To Run Locally
+run npm install;
+run npm run dev.
+(allow for the server to spin up when it first loads up on the browser)
