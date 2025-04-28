@@ -11,9 +11,11 @@ Viewing your profile with all the articles you posted;
 Deleting articles;
 Viewing all articles in the news database using different queries such as topic, author, posting date, etc.
 
-The news website is not mobile friendly, due to limited time on the bootcamp where I prioritized the functionality of the features I implemented. However, I have another project that uses React Native for mobiles. If you are curious, view Habigotchi [https://github.com/dublino8576/habigotchi-front-end](here)!
+The news website is not mobile friendly, due to limited time on the bootcamp where I prioritized the functionality of the features I implemented. However, I have another project that uses React Native for mobiles. If you are curious, view Habigotchi [here](https://github.com/dublino8576/habigotchi-front-end)!
 
 ##To Run Locally
-run npm install;
-run npm run dev.
+```
+1. npm install;
+2. npm run dev.
+```
 (allow for the server to spin up when it first loads up on the browser)
